@@ -12,6 +12,13 @@ const shape = z.object({
   smtp_from_name: z.string().optional().catch(undefined),
   smtp_username: z.string().optional().catch(undefined),
   smtp_password: z.string().optional().catch(undefined),
+  // SSO / OpenID Connect
+  sso_enabled: z.boolean().catch(false),
+  sso_only: z.boolean().catch(false),
+  sso_client_id: z.string().optional().catch(undefined),
+  sso_client_secret: z.string().optional().catch(undefined),
+  sso_authority: z.string().optional().catch(undefined),
+  sso_pkce: z.boolean().catch(true),
 })
 
 export const configJson = FileHelper.json(

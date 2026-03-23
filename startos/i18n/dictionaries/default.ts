@@ -27,6 +27,22 @@ const dict = {
   'Set Primary Domain': 23,
   'Choose which of your Vaultwarden http URLs should serve as the primary domain for the purposes of creating links, sending invites, etc.': 24,
   'Create your Vaultwarden admin portal token': 25,
+  'Enable SSO (OIDC)': 26,
+  'Enable Single Sign-On via OpenID Connect. Requires an OIDC provider like Authentik.': 27,
+  'SSO Only (Disable Password Login)': 28,
+  'When enabled, users can only log in via SSO. Password login is disabled. Note: BW CLI does not support SSO.': 29,
+  'OIDC Client ID': 30,
+  'Client ID from your OIDC provider': 31,
+  'OIDC Client Secret': 32,
+  'Client secret from your OIDC provider': 33,
+  'OIDC Authority URL': 34,
+  'Base URL of the OIDC provider with auto-discovery. Must end with trailing slash.': 35,
+  'Enable PKCE': 36,
+  'Use Proof Key for Code Exchange for additional security': 37,
+  'Configure SSO': 38,
+  'Set up Single Sign-On via OpenID Connect (e.g. Authentik, Keycloak). Requires a restart to take effect.': 39,
+  'SSO Configuration Saved': 40,
+  'SSO settings have been saved. Restart Vaultwarden for changes to take effect.': 41,
 } as const
 
 export type I18nKey = keyof typeof dict
