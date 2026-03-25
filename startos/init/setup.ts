@@ -11,14 +11,18 @@ export const setup = sdk.setupOnInit(async (effects) => {
     .read((c) => ({ domain: c.domain, admin_token: c.admin_token }))
     .const(effects)
 
-  if (!config?.domain || !urls.includes(config.domain)) {
-    await configJson.merge(
-      effects,
-      {
-        domain: urls.find((u) => u.includes('.local')),
-      },
-      { allowWriteAfterConst: true },
-    )
+  if (!config?.domain) {
+    // Only set domain on first run when no domain is configured.
+    // Once set (via "Set Primary Domain" action or config), preserve it
+    // across restarts — even if the interface URL list hasn't populated yet.
+    const defaultUrl = urls[0]
+    if (defaultUrl) {
+      await configJson.merge(
+        effects,
+        { domain: defaultUrl },
+        { allowWriteAfterConst: true },
+      )
+    }
   }
 
   if (!config?.admin_token) {
