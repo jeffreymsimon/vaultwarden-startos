@@ -33,6 +33,23 @@ const dict = {
   'The Admin Portal is off. Run this action to turn it on and generate its token, shown once.': 36,
   'The current admin token stops working. While the portal is off, users can be invited only by turning it back on.': 37,
   'The Admin Portal will be reachable at every address the Web Vault is, protected only by its token.': 38,
+  // 10fir fork: SSO / OIDC (ids 101+ to stay clear of upstream numbering)
+  'Enable SSO (OIDC)': 101,
+  'Enable Single Sign-On via OpenID Connect. Requires an OIDC provider like Authentik.': 102,
+  'SSO Only (Disable Password Login)': 103,
+  'When enabled, users can only log in via SSO. Password login is disabled. Note: BW CLI does not support SSO.': 104,
+  'OIDC Client ID': 105,
+  'Client ID from your OIDC provider': 106,
+  'OIDC Client Secret': 107,
+  'Client secret from your OIDC provider': 108,
+  'OIDC Authority URL': 109,
+  'Base URL of the OIDC provider with auto-discovery. Must end with trailing slash.': 110,
+  'Enable PKCE': 111,
+  'Use Proof Key for Code Exchange for additional security': 112,
+  'Configure SSO': 113,
+  'Set up Single Sign-On via OpenID Connect (e.g. Authentik, Keycloak). Requires a restart to take effect.': 114,
+  'SSO Configuration Saved': 115,
+  'SSO settings have been saved. Restart Vaultwarden for changes to take effect.': 116,
 } as const
 
 export type I18nKey = keyof typeof dict
